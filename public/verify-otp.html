@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="verify-otp-card">
+      <h1>Verify OTP</h1>
+      <p class="reset-instruction">
+        Enter the 6-digit code sent to your email to continue.
+      </p>
+      <form class="verify-otp-form" id="verifyOtpForm">
+        <div class="form-group">
+          <label for="otp">One-time Password</label>
+          <input
+            type="text"
+            id="otp"
+            name="otp"
+            placeholder="123456"
+            maxlength="6"
+            required
+            inputmode="numeric"
+            pattern="\d{6}"
+          />
+        </div>
+
+        <button class="submit-btn" type="submit">Verify OTP</button>
+      </form>
+
+      <p class="footer-text">
+        <a href="forgot-password.html">Back to forgot password</a>
+      </p>
+    </main>
+    <script src="verify-otp.js"></script>
+  </body>
+</html>

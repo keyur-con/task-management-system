@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="signup-card">
+      <h1>Create an Account</h1>
+      <form class="signup-form" id="signupForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter a password"
+            required
+          />
+        </div>
+
+        <button class="submit-btn" type="submit">Sign Up</button>
+      </form>
+
+      <p class="footer-text">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <a href="http://localhost:5000/auth/github" class="github-btn">
+        Sign up with GitHub
+      </a>
+    </main>
+    <script src="signup.js"></script>
+  </body>
+</html>
