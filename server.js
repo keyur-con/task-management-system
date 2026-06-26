@@ -1,4 +1,5 @@
 const morgan = require('morgan');
+const MongoStore = require('connect-mongo');
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -21,14 +22,18 @@ app.use(cookieParser());
 app.use(express.static('public'));
 app.use(helmet());
 app.use(cors({
-    origin: 'http://localhost:5000',
+    origin: process.env.FRONTEND_URL || 'http://localhost:5000',
     credentials: true
 }));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGO_URI,
+        ttl: 24 * 60 * 60 
+    })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
