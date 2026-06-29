@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetch('/profile', {
     method: 'GET',
-    credentials: 'include', // sends cookie automatically
+    credentials: 'include', 
     headers: { 'Content-Type': 'application/json' }
   })
     .then(function (res) {
